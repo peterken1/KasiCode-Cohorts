@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding 101 — KasiCode Cohorts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0e1a;
+  --surface: #1a1930;
+  --border: #2a2945;
+  --white: #e8e6f0;
+  --muted: #8b8a9e;
+  --orange: #ff6b35;
+  --green: #00d97e;
+  --font: 'Inter', system-ui, sans-serif;
+}
+body { font-family: var(--font); background: var(--bg); color: var(--white); line-height: 1.7; }
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.back { display: inline-block; margin: 20px 0; font-size: 13px; color: var(--muted); }
+header { padding: 20px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+header p { color: var(--muted); font-size: 15px; }
+.info-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+.info-item { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.info-item strong { color: var(--white); }
+
+/* Content */
+h2 { font-size: 1.3rem; font-weight: 700; margin: 30px 0 12px; }
+h3 { font-size: 1rem; font-weight: 700; margin: 20px 0 8px; color: var(--orange); }
+p, li { color: var(--muted); font-size: 14px; }
+ul { padding-left: 20px; margin-bottom: 16px; }
+li { margin-bottom: 6px; }
+
+/* Day Cards */
+.day-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+.day-card h3 { margin: 0 0 8px; }
+.day-card p { margin: 0; }
+.day-card .outcomes { margin-top: 10px; padding-left: 18px; }
+.day-card .outcomes li { font-size: 13px; }
+
+/* CTA */
+.cta {
+  background: var(--surface);
+  border: 1px solid var(--orange);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  margin: 40px 0;
+}
+.cta h2 { margin: 0 0 8px; color: var(--white); }
+.cta p { margin-bottom: 16px; }
+.cta .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.cta .btn:hover { opacity: .85; text-decoration: none; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .info-grid { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <a href="../index.html" class="back">← All Courses</a>
+
+  <header>
+    <h1>🚀 Vibe Coding 101</h1>
+    <p>Build real apps with AI in 5 days. No coding experience needed. Just ideas and a phone.</p>
+    <div class="info-grid">
+      <div class="info-item">📅 <strong>5 days</strong></div>
+      <div class="info-item">⏱ <strong>2 hours/day</strong></div>
+      <div class="info-item">💰 <strong>R500</strong></div>
+      <div class="info-item">🎓 <strong>Certificate</strong></div>
+      <div class="info-item">📱 <strong>Phone or laptop</strong></div>
+    </div>
+  </header>
+
+  <h2>What You'll Learn</h2>
+  <ul>
+    <li>How to describe apps in plain English so AI builds exactly what you want</li>
+    <li>Prompt engineering — getting better results with better instructions</li>
+    <li>Building complete, functional apps (not just pretty mockups)</li>
+    <li>Deploying apps to live URLs you can share with anyone</li>
+    <li>Iterating and improving — making your app better with each prompt</li>
+    <li>Real-world use cases: tools for your business, clients, or portfolio</li>
+  </ul>
+
+  <h2>Daily Breakdown</h2>
+
+  <div class="day-card">
+    <h3>Day 1 — Your First App</h3>
+    <p>Introduction to KasiCode. Understanding how AI builds apps. Your first build: a personal tool you'll actually use.</p>
+    <ul class="outcomes">
+      <li>✅ Sign up and navigate KasiCode</li>
+      <li>✅ Build your first working app from a text prompt</li>
+      <li>✅ Understand the build → preview → iterate cycle</li>
+      <li>✅ Deploy your app to a live URL</li>
+    </ul>
+  </div>
+
+  <div class="day-card">
+    <h3>Day 2 — Prompt Engineering</h3>
+    <p>The art of describing what you want. How to write prompts that produce professional, fully-functional apps on the first try.</p>
+    <ul class="outcomes">
+      <li>✅ Write detailed prompts that specify features, data, and design</li>
+      <li>✅ Use modification prompts to tweak and improve</li>
+      <li>✅ Understand what works client-side vs what needs a server</li>
+      <li>✅ Build a business tool (invoice, tracker, or calculator)</li>
+    </ul>
+  </div>
+
+  <div class="day-card">
+    <h3>Day 3 — Data & Functionality</h3>
+    <p>Building apps that remember data, calculate things, and actually work. localStorage, forms, CRUD operations.</p>
+    <ul class="outcomes">
+      <li>✅ Build apps with persistent data (survives page refresh)</li>
+      <li>✅ Create forms that validate and save</li>
+      <li>✅ Add search, filter, and sort to lists</li>
+      <li>✅ Build a complete inventory or order tracker</li>
+    </ul>
+  </div>
+
+  <div class="day-card">
+    <h3>Day 4 — Design & Polish</h3>
+    <p>Making your apps look professional. Animations, responsive design, dark mode, and the details that impress.</p>
+    <ul class="outcomes">
+      <li>✅ Use design-focused prompts for professional UI</li>
+      <li>✅ Add animations, transitions, and micro-interactions</li>
+      <li>✅ Make apps work perfectly on mobile</li>
+      <li>✅ Build a landing page or portfolio piece</li>
+    </ul>
+  </div>
+
+  <div class="day-card">
+    <h3>Day 5 — Deploy & Showcase</h3>
+    <p>Final project day. Build something impressive, deploy it, and present it. Certificate ceremony.</p>
+    <ul class="outcomes">
+      <li>✅ Plan and build a capstone project from scratch</li>
+      <li>✅ Deploy to a live URL and share publicly</li>
+      <li>✅ Present your app to the cohort</li>
+      <li>✅ Receive your KasiCode Builder certificate</li>
+    </ul>
+  </div>
+
+  <h2>What You'll Walk Away With</h2>
+  <ul>
+    <li><strong>3+ deployed apps</strong> — live on the internet, shareable with anyone</li>
+    <li><strong>A new skill</strong> — the ability to build apps on demand using AI</li>
+    <li><strong>A portfolio</strong> — proof of what you can build for clients or employers</li>
+    <li><strong>KasiCode access</strong> — 50 builds included with your cohort enrollment</li>
+    <li><strong>Community</strong> — WhatsApp group with fellow builders for ongoing support</li>
+    <li><strong>Certificate</strong> — KasiCode Vibe Coding 101 completion certificate</li>
+  </ul>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li>A smartphone or laptop with internet access</li>
+    <li>No coding experience needed — seriously</li>
+    <li>An idea of something you'd like to build (we'll help if you don't have one)</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Ready to join?</h2>
+    <p>Next cohort starting soon. Limited to 20 participants per group.</p>
+    <a href="https://kasicode.app/playground.html" class="btn">Enroll Now — R500 →</a>
+  </div>
+
+  <footer>
+    <p><a href="../index.html">← All Courses</a> · <a href="https://kasicode.app" target="_blank">KasiCode</a></p>
+  </footer>
+</div>
+
+</body>
+</html>

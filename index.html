@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KasiCode Cohorts — Learn to Build Apps with AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0e1a;
+  --surface: #1a1930;
+  --border: #2a2945;
+  --white: #e8e6f0;
+  --muted: #8b8a9e;
+  --orange: #ff6b35;
+  --green: #00d97e;
+  --font: 'Inter', system-ui, sans-serif;
+}
+body { font-family: var(--font); background: var(--bg); color: var(--white); line-height: 1.7; }
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+header {
+  padding: 40px 0 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+header h1 span { color: var(--orange); }
+header p { color: var(--muted); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+
+/* Course Cards */
+.courses { display: grid; gap: 20px; margin-bottom: 60px; }
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all .2s;
+}
+.course-card:hover { border-color: var(--orange); transform: translateY(-2px); }
+.course-card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+.course-card .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap; }
+.course-card .meta span { display: flex; align-items: center; gap: 4px; }
+.course-card p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+.course-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: opacity .15s;
+}
+.course-card .btn:hover { opacity: .85; text-decoration: none; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+.badge-live { background: rgba(0,217,126,.15); color: var(--green); }
+.badge-soon { background: rgba(255,107,53,.15); color: var(--orange); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+footer a { color: var(--orange); }
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.6rem; }
+  .course-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Kasi<span>Code</span> Cohorts</h1>
+    <p>Hands-on training to build real apps with AI. No coding experience needed.</p>
+  </header>
+
+  <div class="courses">
+    <div class="course-card">
+      <h2>🚀 Vibe Coding 101 <span class="badge badge-live">Enrolling</span></h2>
+      <div class="meta">
+        <span>📅 5 days</span>
+        <span>⏱ 2 hours/day</span>
+        <span>💰 R500</span>
+        <span>🎓 Certificate included</span>
+      </div>
+      <p>Learn to build complete, working apps using AI — no coding background required. By the end of the week, you'll have built and deployed 3 real apps you can show clients or use in your business.</p>
+      <a href="vibe-coding-101/index.html" class="btn">View Course →</a>
+    </div>
+
+    <div class="course-card">
+      <h2>⚡ Full-Stack with AI <span class="badge badge-soon">Coming Soon</span></h2>
+      <div class="meta">
+        <span>📅 5 days</span>
+        <span>⏱ 3 hours/day</span>
+        <span>💰 R1,000</span>
+        <span>🎓 Certificate included</span>
+      </div>
+      <p>Go beyond single-page apps. Build multi-user systems with databases, authentication, and real-time features. Deploy to production with custom domains.</p>
+      <a href="#" class="btn" style="opacity:.5;pointer-events:none;">Coming Soon</a>
+    </div>
+
+    <div class="course-card">
+      <h2>💼 AI for Business Owners <span class="badge badge-soon">Coming Soon</span></h2>
+      <div class="meta">
+        <span>📅 3 days</span>
+        <span>⏱ 1.5 hours/day</span>
+        <span>💰 R350</span>
+        <span>🎓 Certificate included</span>
+      </div>
+      <p>Not a developer? No problem. Learn to use AI tools to automate your business, build internal tools, and create customer-facing apps — all without writing a single line of code.</p>
+      <a href="#" class="btn" style="opacity:.5;pointer-events:none;">Coming Soon</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Built with ❤️ by <a href="https://kasicode.app" target="_blank">KasiCode</a> · <a href="https://kasicode.app/playground.html">Start Building Free →</a></p>
+  </footer>
+</div>
+
+</body>
+</html>
