@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { -webkit-font-smoothing: antialiased; }
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+
+/* Kanban drag cursor */
+[data-rfd-drag-handle-context-id] { cursor: grab; }
+[data-rfd-drag-handle-context-id]:active { cursor: grabbing; }
