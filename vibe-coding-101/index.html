@@ -711,8 +711,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">KASI<span>CODE</span></div>
-  <a href="#enroll" class="nav-cta">CLAIM YOUR SPOT →</a>
-</nav>
+  <a href="#enroll" class="nav-cta">CLAIM YOUR SPOT →</a></nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -871,31 +870,26 @@
     <div class="section-label reveal">Claim your spot</div>
     <h2 class="reveal">Free. <span class="accent">Limited spots.</span></h2>
     <p style="color: var(--muted); margin-top: 1rem;" class="reveal">This session fills up fast. Once spots are gone, you'll have to wait for the next one — if there is one.</p>
-    <div class="pricing-cards">
-      <div class="price-card reveal" style="max-width:380px;">
-        <div class="price-name">Free Spot</div>
-        <div class="price-amount" style="color:var(--green);">FREE</div>
-        <div class="price-desc">Join the live masterclass. Build and deploy your first app in 30 minutes. No payment, no commitment.</div>
-        <ul class="price-features">
-          <li class="included">Live 30-minute masterclass</li>
-          <li class="included">Build & deploy 1 real app</li>
-          <li class="included">Access to KasiCode platform</li>
-          <li class="included">WhatsApp community invite</li>
-          <li class="included">Session recording</li>
-        </ul>
-        <a href="https://kasicode.app/studio" class="btn-enroll" style="background:var(--green);color:var(--black);">CLAIM FREE SPOT →</a>
-      </div>
-      <div class="price-card featured reveal" style="max-width:380px;">
-        <div class="price-name">Free Spot + Certificate</div>
-        <div class="price-amount"><sup>R</sup>50</div>
-        <div class="price-desc">Everything in the free masterclass, plus an official certificate you can share on LinkedIn and WhatsApp.</div>
-        <ul class="price-features">
-          <li class="included">Everything in Free Spot</li>
-          <li class="included">Official certificate of attendance</li>
-          <li class="included">Share on LinkedIn & WhatsApp</li>
-          <li class="included">Priority support during session</li>
-        </ul>
-        <a href="https://pay.yoco.com/r/7KLobV" class="btn-enroll">GET SPOT + CERTIFICATE — R50 →</a>
+    <div class="pricing-cards" style="max-width:480px;margin:3rem auto 0;">
+      <div class="price-card featured reveal" style="max-width:100%;">
+        <div class="price-name">Reserve Your Free Spot</div>
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:13px;color:var(--muted);line-height:1.7;">Enter your details below. We'll send you the session link and reminder. Optional: add R50 for a certificate.</div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <input type="text" id="lead-name" placeholder="First name" style="width:100%;padding:12px 16px;background:var(--black);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-body);font-size:14px;outline:none;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <input type="email" id="lead-email" placeholder="Email address" style="width:100%;padding:12px 16px;background:var(--black);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-body);font-size:14px;outline:none;">
+        </div>
+        <div style="margin-bottom:16px;">
+          <input type="tel" id="lead-whatsapp" placeholder="WhatsApp number (for reminders)" style="width:100%;padding:12px 16px;background:var(--black);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-body);font-size:14px;outline:none;">
+        </div>
+        <button onclick="claimSpot()" id="claim-btn" style="width:100%;padding:14px;background:var(--green);color:var(--black);border:none;border-radius:6px;font-family:var(--font-mono);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.06em;transition:all .15s;">CLAIM MY FREE SPOT →</button>
+        <div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Want a certificate of attendance?</div>
+          <a href="https://pay.yoco.com/r/7KLobV" style="font-family:var(--font-mono);font-size:12px;color:var(--green);text-decoration:none;">Add certificate — R50 →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -955,7 +949,7 @@
 <section class="cta-section">
   <h2>Spots are <span class="accent">filling up.</span></h2>
   <p>Free. 30 minutes. Build your first app. Don't wait — this session won't last.</p>
-  <a href="https://kasicode.app/studio" class="btn-primary">CLAIM YOUR FREE SPOT NOW →</a>
+  <a href="#enroll" class="btn-primary">CLAIM YOUR FREE SPOT NOW →</a>
 </section>
 
 <!-- FOOTER -->
@@ -975,6 +969,42 @@
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+  }
+
+  // Lead capture
+  function claimSpot() {
+    var name = document.getElementById('lead-name').value.trim();
+    var email = document.getElementById('lead-email').value.trim();
+    var whatsapp = document.getElementById('lead-whatsapp').value.trim();
+    var btn = document.getElementById('claim-btn');
+
+    if (!name || name.length < 2) { alert('Please enter your name'); return; }
+    if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email'); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'RESERVING YOUR SPOT...';
+
+    fetch('https://www.kasicode.app/api/leads/capture', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, whatsapp: whatsapp, source: 'masterclass' })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.ok) {
+        // Redirect to confirmation/thank you
+        window.location.href = 'https://www.kasicode.app/course/thank-you';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'CLAIM MY FREE SPOT →';
+        alert(data.error || 'Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'CLAIM MY FREE SPOT →';
+      alert('Connection error. Please check your internet and try again.');
+    });
   }
 
   // Scroll reveal
